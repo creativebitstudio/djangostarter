@@ -1,0 +1,17 @@
+{% extends 'layout.html' %} {% load static %} {% block title %}Blogs{% endblock %} {% block content %}
+<div class="container">
+    <a href='/'>
+    <h1>Home</h1>
+    </a>
+    <h1>Blog Section</h1>
+
+    {% for blog in blogs %}
+    <a href="/blog/{{ blog.id }}/">
+        <div class="container">
+            <p>{{ blog.title }}</p>
+            <img src="{{ blog.image }}" height="300" width="200" />
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}
